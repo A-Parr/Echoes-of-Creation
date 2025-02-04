@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Creation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Echoes of Creation</h1>
+    <p>Click the button to draw a random character prompt.</p>
+    <div class="card" id="promptCard">Press the button to get a prompt!</div>
+    <button onclick="drawPrompt()">Draw Prompt</button>
+
+    <script>
+        const prompts = [
+            "You grew up in a traveling caravan, learning many cultures but never belonging to one.",
+            "Your family was exiled for a crime they claim they didn’t commit. Do you seek to clear their name?",
+            "You always tell the truth, no matter the cost. Has this ever put you in danger?",
+            "You are hunting for a legendary artifact lost to time. What is it, and why do you need it?",
+            "You swore a vow to never let anyone go hungry in your presence. Why?",
+            "There is a bounty on your head, but you don’t know why. Who is after you?",
+            "A mentor taught you everything you know, but you discovered they are not who they claimed to be.",
+            "A mysterious figure watches over you, intervening at key moments. Do you trust them?",
+            "You struggle to make eye contact, preferring to observe from the edges of a conversation. Why?",
+            "You refuse to kill, even in self-defense. What happened that led to this conviction?"
+        ];
+
+        function drawPrompt() {
+            const randomIndex = Math.floor(Math.random() * prompts.length);
+            document.getElementById('promptCard').innerText = prompts[randomIndex];
+        }
+    </script>
+</body>
+</html>
